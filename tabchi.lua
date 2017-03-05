@@ -437,10 +437,15 @@ _دريافت مخاطبان ذخيره شده توسط ربات_
         else
           local text = [[
 <b>Normal Stats</b>Open by @sajjad_021:)
+          
 Users : ]] .. tostring(pvs) .. [[
+          
 Groups : ]] .. tostring(gps) .. [[
+          
 SuperGroups : ]] .. tostring(sgps) .. [[
+          
 Saved Links : ]] .. tostring(links) .. [[
+          
 Saved Contacts : ]] .. tostring(contacts)
           save_log("User " .. msg.sender_user_id_ .. ", Requested Panel")
           return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, "html")
