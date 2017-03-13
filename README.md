@@ -18,7 +18,7 @@ TG-CLI based broadcasting bot!
 ##Install
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
-sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev libjansson* libpython-dev make unzip git redis-server g++ autoconf -y --force-yes && git clone https://github.com/sajjad-021/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh -y --force-yes && lua creator.lua
+cd $HOME && git clone https://github.com/sajjad-021/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh -y --force-yes && lua creator.lua
 ```
 ```
 Enter Full Sudo ID : 123456    
