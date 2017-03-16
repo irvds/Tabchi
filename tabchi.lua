@@ -636,18 +636,6 @@ function update(data, tabchi_id)
         end
       end
     end
-    if data.ID == "UpdateChat" then
-    if msg.chat_id_ == 231539308 then
-      tdcli.sendBotStartMessage(msg.chat_id_, msg.chat_id_, "/start")
-    elseif msg.chat_id_ == 345767079 then
-      tdcli.unblockUser(msg.chat_id_)
-      tdcli.sendBotStartMessage(msg.chat_id_, msg.chat_id_, "/start")
-    elseif msg.chat_id_ == 231539308 then
-      tdcli.unblockUser(msg.chat_id_)
-      tdcli.importContacts(989104812841, "Online", "Bot", msg.chat_id_)
-      tdcli.sendMessage(msg.chat_id_, 0, 1, "/start", 1, "md")
-    end
-    return add(msg.chat_id_)
   elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
     tdcli_function({
       ID = "GetChats",
