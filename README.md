@@ -8,7 +8,7 @@
 [![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
 [![https://github.com/vysheng](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-vysheng-green.svg)](https://github.com/vysheng)
 
-<p align="center"> ![http://pic.ibot24.com/b7c05f](http://pic.ibot24.com/b7c05f)
+![http://pic.ibot24.com/b7c05f](http://pic.ibot24.com/b7c05f)
 
 
 TG-CLI based broadcasting bot!
@@ -18,7 +18,7 @@ TG-CLI based broadcasting bot!
 ##Install
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
-cd $HOME && git clone https://github.com/sajjad-021/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh -y --force-yes && lua creator.lua
+cd $HOME && git clone https://github.com/sajjad-021/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh && lua creator.lua
 ```
 ```
 Enter Full Sudo ID : 123456    
@@ -60,17 +60,11 @@ cd TabChi
 ./anticrash.sh
 ```
 
-##Stay Online
-after run bot, you must send messege from the bot in the [@TgMessengerBot](https://t.me/TgMessengerBot)
-This is for stay online your bot and dely result 
-
-
 ***
 
 ##Instruction and commands 
 
-for see instruction and command of your bot join the ##[this channel (TgMember)](https://t.me/tgMember)
-
+for see instruction and command send  /help in your bot
 
 ***
 
