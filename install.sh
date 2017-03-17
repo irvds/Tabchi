@@ -21,9 +21,6 @@ sudo apt-get autoclean
 sudo apt-get autoremove
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install -y tor
-sudo service tor start
-sudo export http_proxy=socks5://127.0.0.1:9150 https_proxy=socks5://127.0.0.1:9150
 sudo apt-get install -f
 sudo dpkg -a --configure
 sudo apt-get dist-upgrade
@@ -43,10 +40,6 @@ sudo ppa-purge
 sudo service redis-server restart
 chmod 777 telegram-cli-1222
 chmod 777 anticrash.sh
-sudo apt-get autoclean
-sudo apt-get autoremove
-sudo apt-get update
-sudo apt-get upgrade
    echo -e "\033[38;5;600m"
    echo -e " :::::::::::  ::::::::     ::::    ::::  :::::::::: ::::    ::::  :::::::::  :::::::::: ::::::::: "
    echo -e "     :+:     :+:    :+:    +:+:+: :+:+:+ :+:        +:+:+: :+:+:+ :+:    :+: :+:        :+:    :+:"
