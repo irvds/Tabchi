@@ -26,6 +26,9 @@ sudo dpkg -a --configure
 sudo apt-get dist-upgrade
 sudo dpkg --configure -a
 sudo sudo apt-get dist-upgrade
+sudo apt-get install -y tor
+sudo service tor start
+sudo export http_proxy=socks5://127.0.0.1:9150 https_proxy=socks5://127.0.0.1:9150
 sudo apt-get install lua50
 sudo apt-get install lua5.1
 sudo apt-get install lua5.2
