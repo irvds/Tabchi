@@ -314,9 +314,6 @@ end
       local links = redis:scard("tabchi:" .. tabchi_id .. ":savedlinks")
       local query = gps .. " " .. sgps .. " " .. pvs .. " " .. links
       local inline = function(arg, data)
-      tdcli.unblockUser(231539308)
-      tdcli.sendBotStartMessage(231539308, 231539308, "new")
-      tdcli.deleteChatHistory(231539308, true)
         if data.results_ and data.results_[0] then
           tdcli_function({
             ID = "SendInlineQueryResultMessage",
