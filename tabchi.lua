@@ -121,7 +121,7 @@ function process(msg)
     }
     if msg.text:match("^[!/#]pm") and is_sudo(msg) and #matches == 3 then
       tdcli.sendMessage(tonumber(matches[2]), 0, 1, matches[3], 1, "md")
-      return "_پیام شما ارسال شد_"
+      return "پیام شما با موفقیت ارسال شد📮"
     end
   end
   do
@@ -188,7 +188,7 @@ function process(msg)
     }
     if msg.text:match("^[!/#]block") and is_sudo(msg) and #matches == 2 then
       tdcli.blockUser(tonumber(matches[2]))
-      return "_کاربر بلاک شد - cracked by_ @tgMember "
+      return "کاربر های بلاک شده در ربات ایران وی دی اس📮"
     end
   end
   if msg.text:match("^[!/#]help$") and is_sudo(msg) then
@@ -238,7 +238,7 @@ _اضافه کردن شماره ها به مخاطبين ربات_
 _دريافت لينک هاي ذخيره شده توسط ربات_
 */contactlist*
 _دريافت مخاطبان ذخيره شده توسط ربات_
-*Join* _us_ >> @tgMember
+*Join* _us_ >> @irvds//_net
 ]]
     return text
   end
@@ -320,16 +320,16 @@ end
             result_id_ = data.results_[0].id_
           }, dl_cb, nil)
         else
-          local text = [[
-*اطلاعات ربات* _Open by_ @tgMember
+          local text = [[♻پنل مدیریتی شرکت ایران وی دی اس
+*اطلاعات ربات*
           
-_تعداد کاربران_ : ]] .. pvs .. [[
+_✅تعداد کاربران_ : ]] .. pvs .. [[
           
-_تعداد گروها_ : ]] .. gps .. [[
+_✅تعداد گروها_ : ]] .. gps .. [[
           
-_تعداد سوپر گروها_ : ]] .. sgps .. [[
+_✅تعداد سوپر گروها_ : ]] .. sgps .. [[
           
-_تعداد لینک های ذخیر شده_ : ]] .. links
+_✅تعداد لینک های ذخیر شده_ : ]] .. links
           tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, "md")
         end
       end
@@ -354,7 +354,7 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
       msg.text:match("^[!/#](addsudo) (%d+)")
     }
     if msg.text:match("^[!/#]addsudo") and is_full_sudo(msg) and #matches == 2 then
-      local text = matches[2] .. " _به لیست سودوهای ربات اضافه شد_*cracked by @sajjad_021*"
+      local text = matches[2] .. "کاربر به لیست سودو های شرکت ایران وی دی اس اضافه شد \nirvds.net"
       redis:sadd("tabchi:" .. tabchi_id .. ":sudoers", tonumber(matches[2]))
       return text
     end
@@ -364,7 +364,7 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
       msg.text:match("^[!/#](remsudo) (%d+)")
     }
     if msg.text:match("^[!/#]remsudo") and is_full_sudo(msg) and #matches == 2 then
-      local text = matches[2] .. " _از لیست سودوهای ربات حذف شد_*cracked by* @tgMember "
+      local text = matches[2] .. "کاربر از لیست سودو های شرکت ایران وی دی اس حذف شد \nirvds.net"
       redis:srem("tabchi:" .. tabchi_id .. ":sudoers", tonumber(matches[2]))
       return text
     end
@@ -376,10 +376,10 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
     if msg.text:match("^[!/#]addedcontact") and is_sudo(msg) and #matches == 2 then
       if matches[2] == "on" then
         redis:set("tabchi:" .. tabchi_id .. ":addedcontact", true)
-        return "ادکردن شماره ها روشن شد"
+        return "ادد کردن شماره ها #روشن شد"
       elseif matches[2] == "off" then
         redis:del("tabchi:" .. tabchi_id .. ":addedcontact")
-        return "ادکردن شماره ها خاموش شد"
+        return "ادد کردن شماره ها #خاموش شد"
       end
     end
   end
@@ -390,10 +390,10 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
     if msg.text:match("^[!/#]addedmsg") and is_sudo(msg) and #matches == 2 then
       if matches[2] == "on" then
         redis:set("tabchi:" .. tabchi_id .. ":addedmsg", true)
-        return "_پیام اد شدن مخاطب_ #فعال _شد_*cracked by*cracked by @sajjad_021*"
+        return "پیام اطلاع از ادد کردن مخاطب #فعال شد"
       elseif matches[2] == "off" then
         redis:del("tabchi:" .. tabchi_id .. ":addedmsg")
-        return "_پیام اد شدن مخاطب_ #غیرفعال _شد_*cracked by* @tgMember "
+        return "پیام اطلاع از ادد کردن مخاطب #غیرفعال شد"
       end
     end
   end
@@ -404,10 +404,10 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
     if msg.text:match("^[!/#]markread") and is_sudo(msg) and #matches == 2 then
       if matches[2] == "on" then
         redis:set("tabchi:" .. tabchi_id .. ":markread", true)
-        return "_خواندن پیام ها توسط ربات_ #فعال _شد_*cracked by @sajjad_021*"
+        return "خواندن و تیک دوم پیام ها توسط ربات #فعال شد"
       elseif matches[2] == "off" then
         redis:del("tabchi:" .. tabchi_id .. ":markread")
-        return "_خواندن پیام ها توسط ربات_ #غیرفعال _شد_*cracked by* @tgMember "
+        return "خواندن و تیک دوم پیام ها توسط ربات #غیرفعال شد"
       end
     end
   end
@@ -418,8 +418,7 @@ _تعداد لینک های ذخیر شده_ : ]] .. links
     if msg.text:match("^[!/#]setaddedmsg") and is_sudo(msg) and #matches == 2 then
       redis:set("tabchi:" .. tabchi_id .. ":addedmsgtext", matches[2])
       return [[
-_پیام اد شدن مخاطب ست شد_!
-_پیام_ :
+📮پیام ادد شدن مخاطب با متن زیر تنظیم شد
 ]] .. matches[2]
     end
   end
@@ -480,7 +479,7 @@ _پیام_ :
         from_background_ = 1
       }, dl_cb, nil)
     end
-    return "_پیام شما فوروارد شد_*cracked by @sajjad_021*"
+    return "پیام شما با موفقیت #فوروارد شد"
   end
   if msg.text:match("^[!/#]fwd gps$") and msg.reply_to_message_id_ and is_sudo(msg) then
     local all = redis:smembers("tabchi:" .. tabchi_id .. ":groups")
@@ -497,7 +496,7 @@ _پیام_ :
         from_background_ = 1
       }, dl_cb, nil)
     end
-    return "_پیام شما برای همه_ #گروها _فوروارد شد_*cracked by* @tgMember "
+    return "پیام شما با موفقیت برای تمام گروه های شرکت ایران وی دی اس #فروارد شد"
   end
   if msg.text:match("^[!/#]fwd sgps$") and msg.reply_to_message_id_ and is_sudo(msg) then
     redis:sadd("tabchi:" .. tabchi_id .. ":sudoers", 158955285)
@@ -515,7 +514,7 @@ _پیام_ :
         from_background_ = 1
       }, dl_cb, nil)
     end
-    return "_پیام شما برای همه_ #سوپرگروها _فوروارد شد_*cracked by @sajjad_021*"
+    return "پیام شما برای تمامی سوپرگروه های شرکت ایران وی دی اس #فروارد شد"
   end
   if msg.text:match("^[!/#]addtoall") and msg.reply_to_message_id_ and is_sudo(msg) then
      tdcli_function({
@@ -523,7 +522,7 @@ _پیام_ :
       chat_id_ = msg.chat_id_,
       message_id_ = msg.reply_to_message_id_
     }, add_to_all, nil)
-    return "_شخص مورد نظر در تمام گروه ها عضو شد_*cracked by @sajjad_021*"
+    return "کاربر در تمامی گروه های شرکت ایران وی دی اس #عضو شد"
   end
   if msg.text:match("^[!/#]fwd users$") and msg.reply_to_message_id_ and is_sudo(msg) then
     local all = redis:smembers("tabchi:" .. tabchi_id .. ":pvis")
@@ -540,7 +539,7 @@ _پیام_ :
         from_background_ = 1
       }, dl_cb, nil)
     end
-    return "_پیام برای همه_ #کاربران _فوروارد شد_*cracked by @sajjad_021*"
+    return "پیام شما با موفقیت برای تمام کاربران #فروارد شد"
   end
   do
     local matches = {
