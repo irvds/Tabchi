@@ -1,8 +1,3 @@
-JSON = loadfile("dkjson.lua")()
-URL = require("socket.url")
-http = require("socket.http")
-http.TIMEOUT = 10
-undertesting = 1
 function is_sudo(msg)
   local sudoers = {158955285}
   table.insert(sudoers, tonumber(redis:get("tabchi:" .. tabchi_id .. ":fullsudo")))
@@ -717,4 +712,3 @@ function update(data, tabchi_id)
     }, dl_cb, nil)
   end
 end
-return {update = update}
