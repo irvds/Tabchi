@@ -1,4 +1,4 @@
-# [TabChi v4](https://telegram.me/irvds_net)
+# [TabChi v1](https://telegram.me/irvds_net)
 
 
 ##Install
@@ -57,13 +57,13 @@ for see instruction and command send  /help in your bot
 ##Developers
 
 
-##[Mr reza](https://telegram.me/Company_vds)
+🔹[Mr reza](https://telegram.me/Company_vds)
 
-##[Mr Hosein](https://telegram.me/HShWebDesigner)
+🔹[Mr Hosein](https://telegram.me/HShWebDesigner)
 
-##Chanel by [Iranvds](https://telegram.me/irvds_net)
+🔹[Chanel by Iranvds](https://telegram.me/irvds_net)
 
-##Site by [Iranvds](http://irvds.net)
+🔹[Site by Iranvds](http://irvds.net)
 
 
 Enjoy Your New Bot!
