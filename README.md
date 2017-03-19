@@ -1,24 +1,10 @@
-# [TabChi v4](https://t.me/tgMember)
+# [TabChi v4](https://telegram.me/irvds_net)
 
-[![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/license-AGPL-blue.svg)](https://github.com/sajjad-021/Tabchi)
-[![http://t.me/sajjad_021](https://img.shields.io/badge/Telegram-sajjad__021-blue.svg)](http://t.me/sajjad_021)
-[![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-Tabchi-green.svg)](https://github.com/sajjad-021/Tabchi)
-[![http://tgmember.cf](https://img.shields.io/badge/webpage-tgMember-ff69b4.svg)](http://tgmember.cf)
-
-[![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
-[![https://github.com/vysheng](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-vysheng-green.svg)](https://github.com/vysheng)
-
-![http://pic.ibot24.com/b7c05f](http://pic.ibot24.com/b7c05f)
-
-
-TG-CLI based broadcasting bot!
-
-****
 
 ##Install
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
-cd $HOME && git clone https://github.com/sajjad-021/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh && lua creator.lua
+cd $HOME && git clone https://github.com/irvds/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh && lua creator.lua
 ```
 ```
 Enter Full Sudo ID : 123456    
@@ -71,9 +57,10 @@ for see instruction and command send  /help in your bot
 ##Developers
 
 
-##[open by (sajjad_021)](https://t.me/sajjad_021)
-##[channel (TgMember)](https://t.me/tgMember)
+##[Mr reza](https://telegram.me/Company_vds)
+##[Mr Hosein](https://telegram.me/HShWebDesigner)
+##Chanel by [Iranvds](https://telegram.me/irvds_net)
+##Site by [Iranvds](http://irvds.net)
 
-###Powered by [iTeam](https://telegram.me/iTeam_IR)
 
 Enjoy Your New Bot!
